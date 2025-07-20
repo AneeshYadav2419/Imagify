@@ -1,13 +1,29 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { motion } from 'motion/react'
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
+import { toast } from 'react-toastify'
 
 export const Result = () => {
   const [image, setImage] = useState(assets.sample_img_1)
   const [isImageLoaded, setIsImageLoaded] = useState(false)
-  const [loading , setLoading ] =useState(true)
-  const [input , setInput] = useState(' ')
+  const [loading , setLoading ] =useState(false)
+  const [input , setInput] = useState('')
+
+  const { generateImage } = useContext(AppContext)
   const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if(input.trim()){
+      console.log(input);
+      const image = await generateImage(input.trim());
+      if(image){
+        setIsImageLoaded(true);
+        setImage(image);
+      }
+    }
+    setLoading(false)
 
   }
    return (
@@ -47,7 +63,9 @@ export const Result = () => {
       text-sm p-0.5 mt-10 rounded-full'>
         <p onClick ={()=>{setIsImageLoaded()}}className='bg-transparent border border-zinc-900
         text-black px-8 py-3 rounded-full cursor-pointer '>Generate Another</p>
-        <a href='' className='bg-zinc-900 px-10 py-3 rounded-full
+        <a href={image}
+        download="generated-image.png"
+        className='bg-zinc-900 px-10 py-3 rounded-full
         cursor-pointer'>Download</a>
        </div>
        }
