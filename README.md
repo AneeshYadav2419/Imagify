@@ -2,6 +2,8 @@
 
 Imagify AI is a full-stack application that allows users to generate high-quality images from custom text prompts using the power of AI. Built with the MERN stack, it features secure authentication, smooth payment integration via Razorpay, and a sleek, modern UI.
 
+
+
 ---## 🚀 Features
 
 - 🎨 **AI Image Generation** — Type a prompt, get a unique image instantly.
@@ -9,6 +11,8 @@ Imagify AI is a full-stack application that allows users to generate high-qualit
 - 💳 **Razorpay Integration** — Easy payment flow for premium image generation.
 - 🧾 **Prompt History** — Keep track of all your creations.
 - 🌐 **Responsive Design** — Mobile-friendly interface with a smooth user experience.
+
+- 
 
 ---## 🛠️ Tech Stack
 
