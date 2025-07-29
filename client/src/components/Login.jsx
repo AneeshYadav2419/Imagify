@@ -9,9 +9,9 @@ export const Login = () => {
     const [state , setState] = useState('Login') 
     const{setShowLogin, backendUrl, setToken, setUser} = useContext(AppContext)
 
-    const[name, setName] = useState(' ')
-    const[email, setEmail] = useState(' ')
-    const[password, setPassword] = useState(' ')
+    const[name, setName] = useState('')
+    const[email, setEmail] = useState('')
+    const[password, setPassword] = useState('')
 
     const onSubmitHandler = async (e) =>{
       e.preventDefault();
